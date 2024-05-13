@@ -1,4 +1,4 @@
-# Large Scale OLG
+# Some Large-Scale OLG
 Learning how to model Large-Scale OLG models (life cycle) in Julia. Some papers:
 
 - [Auerbach & Kotlikoff (1987)](https://kotlikoff.net/wp-content/uploads/2019/03/Dynamic-Fiscal-Policy_1.pdf)
