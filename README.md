@@ -29,6 +29,8 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia.
 - Nonlinear Solver Example
 
   ```
+  # Pkg.add("NLsolve")
+  using NLsolve
   # solving for x,y -> z, with parameters a,b,c
   function system_eq!(F, z, a, b, c)
     x, y = z
