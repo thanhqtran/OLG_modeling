@@ -9,9 +9,9 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia. Some papers:
 - [Carroll (1997)](https://doi.org/10.1162/003355397555109)
 - [Krusell & Smith (1998)](http://www.econ.yale.edu/smith/250034.pdf)
 - [Conesa & Krueger (1999)](https://doi.org/10.1006/redy.1998.0039)
-- [Hayashi & Prescott (2002)](https://www.sciencedirect.com/science/article/pii/S1094202501901498)
 - [Attanasio, Low & Sanchez-Marcos (2006)](https://doi.org/10.1257/aer.98.4.1517)
 - [Huggett, Ventura & Yaron (2006)](https://doi.org/10.1016/j.jmoneco.2005.10.013)
+- [Braun and Joines (2014)](https://www.sciencedirect.com/science/article/pii/S0165188915000780)
 
 More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.com/robertdkirkby/LifeCycleOLGReadingList) and [https://www.robertdkirkby.com/life-cycle-and-olg-models/](https://www.robertdkirkby.com/life-cycle-and-olg-models/)
 
