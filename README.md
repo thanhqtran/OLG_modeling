@@ -22,29 +22,24 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia and MATLAB.
 
   ```
   - Nonlinear Solver Example
+
   ```
   # solving for x,y -> z, with parameters a,b,c
-function system_eq!(F, z, a, b, c)
+  function system_eq!(F, z, a, b, c)
     x, y = z
     F[1] = x^2 + y^2 - a + 2b
     F[2] = (x * y)^c - a - b^2
-end
-
-a = 1.0  # example value for a
-b = 2.0  # example value for b
-c = 2.0  # example value for eta
-
-z_guess = [0.0, 0.0]  # Initial guess for x and y
-
-# Solve the system of equations
-result = nlsolve((F, z) -> system_eq!(F, z, a, b, c), z_guess)
-
-# Extract the solution
-x_solution = result.zero[1]
-y_solution = result.zero[2]
-
-println("Solution:")
-println("x = ", x_solution)
-println("y = ", y_solution)
+  end
+  #specify values of parameters
+  a = 1.0  
+  b = 2.0
+  c = 2.0
+  z_guess = [0.0, 0.0]  # Initial guess for x and y
+  # Solve the system of equations
+  result = nlsolve((F, z) -> system_eq!(F, z, a, b, c), z_guess)
+  # Extract the solution
+  x_solution = result.zero[1]
+  y_solution = result.zero[2]
   ```
-When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve k[39] should take the initial guess of k,n in k[40], k[41], and n[40].
+
+  When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve `k[39]` should take the initial guess of `k`,`n` in `k[40]`, `k[41]`, and `n[40]`.
