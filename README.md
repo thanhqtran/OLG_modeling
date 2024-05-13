@@ -11,7 +11,7 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia.
 # Working with Julia
 - [Cheat Sheet](https://cheatsheet.juliadocs.org/)
 - After testing the functionality of the code in .ipynb, the entire code must be wrapped inside a `main()` function so that the script can be called and run in the terminal
-  ```
+  ```julia
   using Packages
 
   function main()
@@ -22,13 +22,13 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia.
 
   ```
   Run Julia from the terminal
-  ```
+  ```console
   cd "path_to_script_containing_folder"
   julia script.jl
   ```
 - Nonlinear Solver Example
 
-  ```
+  ```julia
   # Pkg.add("NLsolve")
   using NLsolve
   # solving for x,y -> z, with parameters a,b,c
