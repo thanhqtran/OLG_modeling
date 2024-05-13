@@ -1,12 +1,18 @@
 # Large Scale OLG
-Learning how to model Large-Scale OLG models (life cycle) in Julia.
+Learning how to model Large-Scale OLG models (life cycle) in Julia. Some papers:
 
 - [Auerbach & Kotlikoff (1987)](https://kotlikoff.net/wp-content/uploads/2019/03/Dynamic-Fiscal-Policy_1.pdf)
-- [Huggett (1996)](http://drphilipshaw.com/Huggett%201996.pdf)
 - [Aiyagari (1994)](http://drphilipshaw.com/AyagariQJE94.pdf)
+- [Hubbard, Skinner & Zeldes (1995)](https://doi.org/10.1086/261987)
+- [Imrohoroglu, Imorohoroglu & Joines (1995)](https://doi.org/10.1007/BF01213942)
+- [Huggett (1996)](http://drphilipshaw.com/Huggett%201996.pdf)
+- [Carroll (1997)](https://doi.org/10.1162/003355397555109)
 - [Krusell & Smith (1998)](http://www.econ.yale.edu/smith/250034.pdf)
-- [French(2005)]
-- [De Nardi et al (2017)]
+- [Conesa & Krueger (1999)](https://doi.org/10.1006/redy.1998.0039)
+- [Attanasio, Low & Sanchez-Marcos (2006)](https://doi.org/10.1257/aer.98.4.1517)
+- [Huggett, Ventura & Yaron (2006)](https://doi.org/10.1016/j.jmoneco.2005.10.013)
+
+More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.com/robertdkirkby/LifeCycleOLGReadingList) and [https://www.robertdkirkby.com/life-cycle-and-olg-models/](https://www.robertdkirkby.com/life-cycle-and-olg-models/)
 
 # Working with Julia
 - [Cheat Sheet](https://cheatsheet.juliadocs.org/)
