@@ -22,7 +22,7 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia.
 
   ```
   Run Julia from the terminal
-  ```console
+  ```shell
   cd "path_to_script_containing_folder"
   julia script.jl
   ```
