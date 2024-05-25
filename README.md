@@ -13,11 +13,15 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia. Some papers:
 - [Huggett, Ventura & Yaron (2006)](https://doi.org/10.1016/j.jmoneco.2005.10.013)
 - [Braun and Joines (2014)](https://www.sciencedirect.com/science/article/pii/S0165188915000780)
 
+**Books**
+- [Heer & Maussner (2009), Dynamic General Equilibrium Modeling Computational Methods and Applications](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/dsge-book/).
+- [Heer (2019), Public Economics: The Macroeconomic Perspective](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/pubec-book/)
+
 More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.com/robertdkirkby/LifeCycleOLGReadingList) and [https://www.robertdkirkby.com/life-cycle-and-olg-models/](https://www.robertdkirkby.com/life-cycle-and-olg-models/)
 
-# Working with Julia
+# Running Julia Script
 - [Cheat Sheet](https://cheatsheet.juliadocs.org/)
-- After testing the functionality of the code in .ipynb, the entire code must be wrapped inside a `main()` function so that the script can be called and run in the terminal
+- After testing the functionality of the code in `.ipynb`, the entire code must be wrapped inside a `main()` function so that the script can be called and run in the terminal
   ```julia
   using Packages
 
@@ -33,6 +37,34 @@ More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.
   cd "path_to_script_containing_folder"
   julia script.jl
   ```
+
+# Running Dynare in Julia
+Documentation [https://juliapackages.com/p/dynare](https://juliapackages.com/p/dynare)
+- Installation
+```julia
+using Pkg
+pkg"add Dynare"
+```
+- Running
+```julia
+using Dynare
+import LinearAlgebra, OpenBLAS32_jll
+LinearAlgebra.BLAS.lbt_forward(OpenBLAS32_jll.libopenblas_path)
+```
+- Invoke `.mod'` file
+```julia
+context = @dynare "path/model.mod";
+```
+The results are stored in the `context` structure.
+- View results
+The context structure is saved in the directory `<path to modfile>/<modfilenane>/output/<modfilename>.jld2`. It can be loaded with
+```julia
+using JLD2
+DD = load("<path to modfile>/<modefilename>/output/<modefilename>.jld2")``
+```
+The IRF graphs are saved in `<path to modfile>/<modfilenane>/graphs`.
+
+# Snippets
 - Nonlinear Solver Example
 
   ```julia
@@ -57,3 +89,4 @@ More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.
   ```
 
   When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve `k[39]` should take the initial guess of `k`,`n` in `k[40]`, `k[41]`, and `n[40]`.
+  
