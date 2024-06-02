@@ -72,6 +72,7 @@ DD = load("<path to modfile>/<modefilename>/output/<modefilename>.jld2")``
 The IRF graphs are saved in `<path to modfile>/<modfilenane>/graphs`.
 
 ## in Matlab
+Quick Start: [here](https://www.dynare.org/resources/quick_start/)
 ```matlab
 addpath /Applications/Dynare/x.y/matlab
 cd '/Users/USERNAME/work'
