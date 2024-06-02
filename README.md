@@ -38,7 +38,9 @@ More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.
   julia script.jl
   ```
 
-# Running Dynare in Julia
+# Running Dynare
+
+## in Julia
 Documentation [https://juliapackages.com/p/dynare](https://juliapackages.com/p/dynare)
 - Installation
 ```julia
@@ -48,6 +50,10 @@ pkg"add Dynare"
 - Running
 ```julia
 using Dynare
+```
+(if there is an error related to 'OpenBLAS32' )
+
+```julia
 import LinearAlgebra, OpenBLAS32_jll
 LinearAlgebra.BLAS.lbt_forward(OpenBLAS32_jll.libopenblas_path)
 ```
@@ -63,6 +69,17 @@ using JLD2
 DD = load("<path to modfile>/<modefilename>/output/<modefilename>.jld2")``
 ```
 The IRF graphs are saved in `<path to modfile>/<modfilenane>/graphs`.
+
+## in Matlab
+```matlab
+addpath /Applications/Dynare/x.y/matlab
+cd /Users/USERNAME/work
+dynare example1
+```
+to edit
+```matlab
+edit example1.mod
+```
 
 # Snippets
 - Nonlinear Solver Example
