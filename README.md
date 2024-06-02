@@ -41,6 +41,7 @@ More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.
 # Running Dynare
 
 ## in Julia
+(*) does not work all the time
 Documentation [https://juliapackages.com/p/dynare](https://juliapackages.com/p/dynare)
 - Installation
 ```julia
@@ -73,7 +74,7 @@ The IRF graphs are saved in `<path to modfile>/<modfilenane>/graphs`.
 ## in Matlab
 ```matlab
 addpath /Applications/Dynare/x.y/matlab
-cd /Users/USERNAME/work
+cd '/Users/USERNAME/work'
 dynare example1
 ```
 to edit
