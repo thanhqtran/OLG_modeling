@@ -11,6 +11,6 @@ Each period, an agent makes two decisions: how much to save and how much to supp
 
 Output:
 
-![](fig_AK60_capital_distribution.png)
+![](fig_AK60d_kss_distribution.png)
 
-![](fig_AK60_labor_distribution.png)
+![](fig_AK60d_lss_distribution.png)
