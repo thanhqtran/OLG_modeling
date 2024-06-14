@@ -35,11 +35,12 @@ Once retired, the agents receive public pensions $b$ and no labor earnings. The 
 $$k^{s+1}_{t+1} = (1+r_t) k^s_t + b - c^s_t \text{ for } s=T+1, \dots, TR$$
 
 The consumption-leisure FOC is
+
 $$\frac{u_l(c^s_t, l^s_t)}{u_c(c^s_t, l^s_t)} = \gamma \frac{c^s_t + \psi}{l^s_t} = (1-\tau_t) w_t.$$
 
 Euler equation:
 
-$$\frac{u_c(c^{s+1}_{t+1}, l^{s+1}_{t+1})}{u_c(c^s_t, l^s_t)} \times (1+r(t+1))) = \frac{1}{\beta}.$$
+$$\frac{u_c(c^{s+1}_{t+1}, l^{s+1}_{t+1})}{u_c(c^s_t, l^s_t)} = \frac{1}{\beta}.$$
 
 To derive the FOCs, we can solve by forming a Lagrangian equation or Bellman's Recursive equation.
 
