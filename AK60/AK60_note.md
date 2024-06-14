@@ -70,17 +70,21 @@ $$\tau w_t N_t = \frac{TR}{T+TR}b.$$
 Given policy $b$ and initial distribution of capital $\{k_0\}^{T+TR}_{s=1}$ , a collection of policy rules $c^s (k^s_t, K_t, N_t)$ $n^s (k^s_t, K_t, N_t)$, $k^{s+1} (k^s_t, K_t, N_t)$, relative prices $\{ w_t, r_t \}$ such that
 
 - Individual and aggregate behavior are consistent
-  $$N_t = \sum^T_{s=1} \frac{n^s_t}{T+TR},$$
-  
-  $$K_t = \sum^T_{s=1} \frac{k^s_t}{T+TR}.$$
+  ```math
+  N_t = \sum^T_{s=1} \frac{n^s_t}{T+TR},
+  ```
+  ```math
+  K_t = \sum^T_{s=1} \frac{k^s_t}{T+TR}.
+  ```
 
 - Relative prices solve the firm's optimization problem.
 
 - Given input prices and government policy, $c^s_t, n^s_t, k^s_{t+1}$ solve the households' problem.
 
 - Goods market clears:
-  $$Y_t = N_t^{1-\alpha} K_t^\alpha = \sum^{T+TR}_{s=1} \frac{c^s_t}{T+TR} + K_{t+1} - (1-\delta) K_t.$$
-
+  ```math
+  Y_t = N_t^{1-\alpha} K_t^\alpha = \sum^{T+TR}_{s=1} \frac{c^s_t}{T+TR} + K_{t+1} - (1-\delta) K_t.
+  ```
 - The government's budget is balanced.
 
 ## Calibration
@@ -89,7 +93,9 @@ Parameters: $\eta = 2, \beta = 0.99, \alpha = 0.3, \delta = 0.1, \gamma=2, \psi=
 
 Replacement ratio:
 
-$$\xi =\frac{b}{(1-\tau)w \bar{n}} = 0.3$$
+```math
+\xi =\frac{b}{(1-\tau)w \bar{n}} = 0.3
+```
 
 with $\bar{n}$ is the average labor supply. This function is used to calculate $\tau$.
 
@@ -97,11 +103,15 @@ with $\bar{n}$ is the average labor supply. This function is used to calculate $
 
 In the steady state, distribution is constant over generations
 
-$$\{ k^s_t\}^{60}_{s=1} = \{ k^s_{t+1}\}^{60}_{s=1} = \{ \bar{k}^s\}^{60}_{s=1}.$$
+```math
+\{ k^s_t\}^{60}_{s=1} = \{ k^s_{t+1}\}^{60}_{s=1} = \{ \bar{k}^s\}^{60}_{s=1}.
+```
 
 Aggregate capital and labor are also constant
-$K_t = K_{t+1} = K$ and $N_t = N_{t+1} = N$.
-
+```math
+K_t = K_{t+1} = K, \\
+N_t = N_{t+1} = N.
+```
 Prices are also constant: $w, r, \tau$.
 
 **Algorithm (steps)**
