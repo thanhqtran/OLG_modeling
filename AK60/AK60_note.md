@@ -40,7 +40,7 @@ $$\frac{u_l(c^s_t, l^s_t)}{u_c(c^s_t, l^s_t)} = \gamma \frac{c^s_t + \psi}{l^s_t
 
 Euler equation:
 
-$$\frac{u_c(c^{s+1}_{t+1}, l^{s+1}_{t+1})}{u_c(c^s_t, l^s_t)} = \frac{1}{\beta}.$$
+$$\frac{u_l(c^s_t, l^s_t)}{u_c(c^s_t, l^s_t)} = \gamma \frac{c^s_t + \psi}{l^s_t} = (1-\tau_t) w_t.$$
 
 To derive the FOCs, we can solve by forming a Lagrangian equation or Bellman's Recursive equation.
 
