@@ -4,28 +4,30 @@
 
 No population growth. The representative household's life span is 60, such that
 
-$$T + TR = 40 + 20 = 60$$
+$$T + TR = 40 + 20 = 60,$$
 
 where $T$ is the working length and $TR$ is the retirement length. Labor supply $n^s_t$ follows
-$$l^s_t = 1 - n^s_t \text{ for } t \in \{1, 2, \dots, 40\} \\ l^s_t = 1 \text{ for } t \in \{41, 42, \dots, 60\}$$
-where $l^s_t$ is leisure. After T years, retirement is mandatory. The agent's maximization problem is
-$$
-\sum^{T+TR}_{s=1} \beta^{s-1} u(c^s_{s+t-1}, l^s_{t+s-1})
-$$
+
+$$l^s_t = 1 - n^s_t \text{ for } t \in \{1, 2, \dots, 40\},$$
+
+$$l^s_t = 1 \text{ for } t \in \{41, 42, \dots, 60\},$$
+
+where $l^s_t$ is leisure. After T years, retirement is mandatory. 
+
+The agent's maximization problem is
+$$\sum^{T+TR}_{s=1} \beta^{s-1} u(c^s_{s+t-1}, l^s_{t+s-1}),$$
+
 where $\beta$ is the discount factor. The instantaneous utility function:
-$$
-u(c,l) = \frac{((c+\psi)l^\gamma)^{1-\eta} - 1}{1-\eta}
-$$
-An agent is born without wealth and leaves no bequests upon death, thus $k^1_t = k^{61}_t =0$ . The real budget constraint of the working agent is given by
-$$
-k^{s+1}_{t+1} = (1+r_t) k^s_t + (1-\tau_t) w_t n^s_t - c^s_t \text{ for } s = 1, \dots, T
-$$
+$$u(c,l) = \frac{((c+\psi)l^\gamma)^{1-\eta} - 1}{1-\eta}.$$
+
+An agent is born without wealth and leaves no bequests upon death, thus $k^1_t = k^{61}_t = 0$. 
+
+The real budget constraint of the working agent is given by
+$$k^{s+1}_{t+1} = (1+r_t) k^s_t + (1-\tau_t) w_t n^s_t - c^s_t \text{ for } s = 1, \dots, T, $$
 where $r_t, w_t$ are the interest and wage rates, while $\tau$ is the social security contribution tax. 
 
 Once retired, the agents receive public pensions $b$ and no labor earnings. The budget constraint for a retiree is
-$$
-k^{s+1}_{t+1} = (1+r_t) k^s_t + b - c^s_t \text{ for } s=T+1, \dots, TR
-$$
+$$k^{s+1}_{t+1} = (1+r_t) k^s_t + b - c^s_t \text{ for } s=T+1, \dots, TR$$
 Maximizing (3) with respect to (5). The FOCs are
 $$
 \frac{u_l(c^s_t, l^s_t)}{u_c(c^s_t, l^s_t)} = \gamma \frac{c^s_t + \psi}{l^s_t} = (1-\tau_t) w_t
