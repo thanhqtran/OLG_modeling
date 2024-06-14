@@ -11,8 +11,6 @@ Each period, an agent makes two decisions: how much to save and how much to supp
 
 Output:
 
-![](https://github.com/thanhqtran/OLG_modeling/blob/8f99d9221e02060033bdecf1ab75503b7e2a1e4a/Ak60/fig_AK60_capital_distribution.png)
-
 ![](fig_AK60_capital_distribution.png)
 
-![](https://github.com/thanhqtran/OLG_modeling/blob/8f99d9221e02060033bdecf1ab75503b7e2a1e4a/Ak60/fig_AK60_labor_distribution.png)
+![](fig_AK60_labor_distribution.png)
