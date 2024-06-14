@@ -9,6 +9,6 @@ This is a simple life-cycle model with deterministic retirement without human ca
 
 Output:
 
-[](fig_AK60_capital_distribution.png)
+[](/fig_AK60_capital_distribution.png)
 
-[](fig_AK60_labor_distribution.png)
+[](/fig_AK60_labor_distribution.png)
