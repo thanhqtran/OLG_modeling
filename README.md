@@ -106,8 +106,9 @@ edit example1.mod
   x_solution = result.zero[1]
   y_solution = result.zero[2]
   ```
-  - Loop
-  while `loop`
+    When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve `k[39]` should take the initial guess of `k`,`n` in `k[40]`, `k[41]`, and `n[40]`.
+- Loop
+  - while `loop`
   ```julia
   max_iter = 10
   i = 1
@@ -122,18 +123,16 @@ edit example1.mod
     end
   end
   ```
-  for `loop` forward
+  - for `loop` forward
   ```julia
   for s in 1:1:60
     k[s] = solve(k[s-1)
   end
   ```
-  for `loop` backward
+  - for `loop` backward
   ```julia
   for s in 60:-1:1
     k[s] = solve(k[s+1])
   end
   ```
-
-  When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve `k[39]` should take the initial guess of `k`,`n` in `k[40]`, `k[41]`, and `n[40]`.
   
