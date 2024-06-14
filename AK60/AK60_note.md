@@ -25,7 +25,9 @@ $$u(c,l) = \frac{((c+\psi)l^\gamma)^{1-\eta} - 1}{1-\eta}.$$
 An agent is born without wealth and leaves no bequests upon death, thus $k^1_t = k^{61}_t = 0$. 
 
 The real budget constraint of the working agent is given by
+
 $$k^{s+1}_{t+1} = (1+r_t) k^s_t + (1-\tau_t) w_t n^s_t - c^s_t \text{ for } s = 1, \dots, T, $$
+
 where $r_t, w_t$ are the interest and wage rates, while $\tau$ is the social security contribution tax. 
 
 Once retired, the agents receive public pensions $b$ and no labor earnings. The budget constraint for a retiree is
@@ -37,7 +39,7 @@ $$\frac{u_l(c^s_t, l^s_t)}{u_c(c^s_t, l^s_t)} = \gamma \frac{c^s_t + \psi}{l^s_t
 
 Euler equation:
 
-$$\frac{1}{\beta} = \frac{u_c(c^{s+1}_{t+1}, l^{s+1}_{t+1})}{u_c(c^s_t, l^s_t)}(1+r_{t+1}) =\frac{(c^{s+1}_{t+1} + \psi)^{-\eta} (l^{s+1}_{t+1})^{\gamma(1-\eta)}}{(c^s_t + \psi)^{-\eta} (l^s_t)^{\gamma(1-\eta)}} (1+r_{t+1}).$$
+$$\frac{1}{\beta} = \frac{(c^{s+1}_{t+1} + \psi)^{-\eta} (l^{s+1}_{t+1})^{\gamma(1-\eta)}}{(c^s_t + \psi)^{-\eta} (l^s_t)^{\gamma(1-\eta)}} (1+r_{t+1}).$$
 
 To derive the FOCs, we can solve by forming a Lagrangian equation or Bellman's Recursive equation.
 
