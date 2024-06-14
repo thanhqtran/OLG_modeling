@@ -21,7 +21,7 @@ More: [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.
 
 # Running Julia Script
 - [Cheat Sheet](https://cheatsheet.juliadocs.org/)
-- After testing the functionality of the code in `.ipynb`, the entire code must be wrapped inside a `main()` function so that the script can be called and run in the terminal
+- After testing the functionality of the code in `.ipynb`, the entire code must be wrapped inside a `main()` function. Then, the script can be called and run in the terminal.
   ```julia
   using Packages
 
@@ -105,6 +105,34 @@ edit example1.mod
   # Extract the solution
   x_solution = result.zero[1]
   y_solution = result.zero[2]
+  ```
+  - Loop
+  while `loop`
+  ```julia
+  max_iter = 10
+  i = 1
+  tol = 1e-6
+  err = 0.1
+  while i <= max_iter && abs(err) > tol
+    do something
+    if abs(err) > tol
+      i += 1
+    else
+      break
+    end
+  end
+  ```
+  for `loop` forward
+  ```julia
+  for s in 1:1:60
+    k[s] = solve(k[s-1)
+  end
+  ```
+  for `loop` backward
+  ```julia
+  for s in 60:-1:1
+    k[s] = solve(k[s+1])
+  end
   ```
 
   When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve `k[39]` should take the initial guess of `k`,`n` in `k[40]`, `k[41]`, and `n[40]`.
