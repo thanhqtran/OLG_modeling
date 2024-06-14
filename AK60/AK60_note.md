@@ -72,12 +72,14 @@ $$\tau w_t N_t = \frac{TR}{T+TR}b.$$
 Given policy $b$ and initial distribution of capital $\{k_0\}^{T+TR}_{s=1}$ , a collection of policy rules $c^s (k^s_t, K_t, N_t)$ $n^s (k^s_t, K_t, N_t)$, $k^{s+1} (k^s_t, K_t, N_t)$, relative prices $\{ w_t, r_t \}$ such that
 
 - Individual and aggregate behavior are consistent
-  ```math
-  N_t = \sum^T_{s=1} \frac{n^s_t}{T+TR},
-  ```
-  ```math
-  K_t = \sum^T_{s=1} \frac{k^s_t}{T+TR}.
-  ```
+
+```math
+N_t = \sum^T_{s=1} \frac{n^s_t}{T+TR},
+```
+
+```math
+K_t = \sum^T_{s=1} \frac{k^s_t}{T+TR}.
+```
 
 - Relative prices solve the firm's optimization problem.
 
@@ -128,19 +130,20 @@ Prices are also constant: $w, r, \tau$.
 
 For backward iteration, since $k^{61}=0 = k^1$, we only need to calculate the decision rule for $k^{59}, k^{58}, \dots, k^2$. 
 
-- For $t=59, \dots, 41$: Since the retiree does not work, we only need to deal with the Euler equation to determine $k$. To calculate the optimal $k^{59}$, we need the information of $k^{60}$ and $k^{61}$. Although $k^{61}$ is known, $k^{60}$ is not. Here, we provide the first 2 guesses for the first 2 iterations
+For $t=59, \dots, 41$: Since the retiree does not work, we only need to deal with the Euler equation to determine $k$. To calculate the optimal $k^{59}$, we need the information of $k^{60}$ and $k^{61}$. Although $k^{61}$ is known, $k^{60}$ is not. Here, we provide the first 2 guesses for the first 2 iterations $k^{60}_1 = 0.15$, and $k^{60}_2 = 0.2$. Note: the subscript denotes the $i^{th}$ iteration.
 
-  $$k^{60}_1 = 0.15, k^{60}_2 = 0.2$$
-  
-  the subscript denotes the $i^{th}$ iteration. 
 
-- For $t=40$, you need to find the optimal values of $n^{40} (n^{41}, k^{41})$, $k^{40}(k^{41}, k^{42}, n^{41}, n^{42})$. As this is the last period with a positive labor supply, we have $n^{41} = n^{42} = 0$. Capital holdings $k^{41}, k^{42}$ have been solved in the retiree's problem. Hence, you have 2 equations of 2 unknowns. We can use Julia's `NLSolve`.
+For $t=40$, you need to find the optimal values of $n^{40} (n^{41}, k^{41})$, $k^{40}(k^{41}, k^{42}, n^{41}, n^{42})$. As this is the last period with a positive labor supply, we have $n^{41} = n^{42} = 0$. Capital holdings $k^{41}, k^{42}$ have been solved in the retiree's problem. Hence, you have 2 equations of 2 unknowns. We can use Julia's `NLSolve`.
 
-- For $t=39,\dots, 1$, we will do things similar to the previous steps. Note that when we calculate $k^1$, if it is different from the tolerance, we must update $K$ and $N$.
+
+For $t=39,\dots, 1$, we will do things similar to the previous steps. Note that when we calculate $k^1$, if it is different from the tolerance, we must update $K$ and $N$.
+
 
 Updating $k^{60}$ using the Secant Method:
 
-$$k^{60}_{i} = k^{60}_{i-1} - \frac{k^{60}_{i-1} - k^{60}_{i-2}}{k^{1}_{i-1} - k^{1}_{i-2}} k^1_{i-1}$$
+```math
+k^{60}_{i} = k^{60}_{i-1} - \frac{k^{60}_{i-1} - k^{60}_{i-2}}{k^{1}_{i-1} - k^{1}_{i-2}} k^1_{i-1}
+```
 
 **More on steps 1 and 5:**
 
@@ -148,7 +151,13 @@ It is actually sufficient to make only a guess of $N$ since $K$ must scale up wi
 
 The update algorithm is simple:
 
-$$N^{guess}_{j} = \phi N^{guess}_{j-1} + (1-\phi) N^{out}_{j-1}$$
+```math
+N^{guess}_{j} = \phi N^{guess}_{j-1} + (1-\phi) N^{out}_{j-1}
+```
 
-with $\phi$ is the learning rate, $j$ is the $j^{th}$ iteration. $N^{out}$ is the outcome of an iteration taking $N^{guess}$ as an input. The algorithm should update and converge at iteration $\hat{j}$ such that $N^{guess}_{\hat{j}} = N^{out}_{\hat{j}}$ .
+with $\phi$ is the learning rate, $j$ is the $j^{th}$ iteration. 
+
+$N^{out}$ is the outcome of an iteration taking $N^{guess}$ as an input. 
+
+The algorithm should update and converge at iteration $\hat{j}$ such that $N^{guess}_{\hat{j}} = N^{out}_{\hat{j}}$ .
 
