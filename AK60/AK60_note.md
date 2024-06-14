@@ -86,9 +86,11 @@ K_t = \sum^T_{s=1} \frac{k^s_t}{T+TR}.
 - Given input prices and government policy, $c^s_t, n^s_t, k^s_{t+1}$ solve the households' problem.
 
 - Goods market clears:
-  ```math
-  Y_t = N_t^{1-\alpha} K_t^\alpha = \sum^{T+TR}_{s=1} \frac{c^s_t}{T+TR} + K_{t+1} - (1-\delta) K_t.
-  ```
+
+```math
+Y_t = N_t^{1-\alpha} K_t^\alpha = \sum^{T+TR}_{s=1} \frac{c^s_t}{T+TR} + K_{t+1} - (1-\delta) K_t.
+```
+
 - The government's budget is balanced.
 
 ## Calibration
@@ -159,5 +161,9 @@ with $\phi$ is the learning rate, $j$ is the $j^{th}$ iteration.
 
 $N^{out}$ is the outcome of an iteration taking $N^{guess}$ as an input. 
 
-The algorithm should update and converge at iteration $\hat{j}$ such that $N^{guess}_{\hat{j}} = N^{out}_{\hat{j}}$ .
+The algorithm should update and converge at iteration $\hat{j}$ such that 
+
+```math
+ $N^{guess}_{\hat{j}} = N^{out}_{\hat{j}}.
+```
 
