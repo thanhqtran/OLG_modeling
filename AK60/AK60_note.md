@@ -17,7 +17,9 @@ $$l^s_t = 1 \text{ for } t \in \{41, 42, \dots, 60\},$$
 where $l^s_t$ is leisure. After T years, retirement is mandatory. 
 
 The agent's maximization problem is
-$$\sum^{T+TR}_{s=1} \beta^{s-1} u(c^s_{s+t-1}, l^s_{t+s-1}),$$
+```math
+\sum^{T+TR}_{s=1} \beta^{s-1} u(c^s_{s+t-1}, l^s_{t+s-1}),
+```
 
 where $\beta$ is the discount factor. The instantaneous utility function:
 $$u(c,l) = \frac{((c+\psi)l^\gamma)^{1-\eta} - 1}{1-\eta}.$$
