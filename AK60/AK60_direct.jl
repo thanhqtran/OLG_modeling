@@ -101,7 +101,7 @@ function backward_iteration(nbar)
                 ns[s] = 0
             elseif s == 40
                 # at s = 40, given k41 and n41, solve k40 and n40
-                result = nlsolve((F, X) -> fs40!(F, X, ks[s+1], ks[s+1]), [ks[s+1], ns[s+1]])
+                result = nlsolve((F, X) -> fs40!(F, X, ks[s+1], ks[s+2]), [ks[s+1], ns[s+1]])
                 ks[s] = result.zero[1]
                 ns[s] = result.zero[2]
             else
