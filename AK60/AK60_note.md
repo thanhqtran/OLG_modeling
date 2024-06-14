@@ -164,6 +164,6 @@ $N^{out}$ is the outcome of an iteration taking $N^{guess}$ as an input.
 The algorithm should update and converge at iteration $\hat{j}$ such that 
 
 ```math
- $N^{guess}_{\hat{j}} = N^{out}_{\hat{j}}.
+N^{guess}_{\hat{j}} = N^{out}_{\hat{j}}.
 ```
 
