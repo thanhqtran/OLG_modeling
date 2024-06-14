@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on June 15, 2024
+
+@author: thanhqtran
+
+AK60.jl
+deterministic simple direct computation of AK60
+based on Heer (2009)'s book [Ch.9] 
+"""
+
+
 using Plots
 using NLsolve
 
@@ -63,7 +75,7 @@ end
 # =====================================================================
 # Target: loop backward iteration until we get k[1] = 0
 # change the guess of k[60] and iterate again if k[1] is not 0
-max_iter = 20
+max_iter = 30
 
 function backward_iteration(nbar)
     k60_guess = zeros(max_iter + 1)
@@ -135,7 +147,7 @@ end
 # == output: the true nbar with its associated ks_true and ns_true  ===
 # =====================================================================
 
-outer_max_iter = 20
+outer_max_iter = 30
 outer_tol = 1e-6
 outer_err = 1.0
 outer_i = 1
@@ -182,6 +194,49 @@ while outer_i <= outer_max_iter && abs(outer_err) > outer_tol
     end
 end
 
+# =====================================================================
+# == Calculate other variables ========================================
+# == earnings, consumption, welfare ===================================
+# =====================================================================
+
+# earnings
+function cal_income(s, k, n)
+    if s <= 40
+        return (1 + r) * k + (1 - tau) * n * ((1 - alpha) * k^alpha * n^(-alpha))
+    elseif s <= 60
+        return (1 + r) * k + b
+    else
+        return 0
+    end
+end
+
+# consumption
+function cal_c(s, n, w, k1)
+    if s <= 40
+        return (1 - tau) * w * (1 - n) / gamma - psi
+    elseif s <= 60
+        return w - k1
+    else
+        return 0
+    end
+end
+
+# welfare
+function cal_welfare(s, c, n)
+    return beta^(s - 1) * (((c + psi) * ((1 - n)^gamma))^(1 - eta) - 1) / (1 - eta)
+end
+
+# using ks_true and ns_true to calculate the variables
+ws_true = zeros(61)
+cs_true = zeros(61)
+us_true = zeros(61)
+
+for s in 1:60
+    ws_true[s] = cal_income(s, ks_true[s], ns_true[s])
+    cs_true[s] = cal_c(s, ns_true[s], ws_true[s], ks_true[s+1])
+    us_true[s] = cal_welfare(s, cs_true[s], ns_true[s])
+end
+
 println("Final nbar: ", nbar)
 println("Final K: ", K)
 println("Final N: ", N)
@@ -190,12 +245,13 @@ println("Final Ny: ", Ny)
 # ========================
 # == Plotting ============
 # ========================
-# show 2 plots at the same time
+# show 4 plots at the same time
 
 # plot of ks
-plotk = plot(ks_true, label="ks")
+plotk = plot(ks_true, label="ks", title="Capital Distribution", xlabel="Age", ylabel="Capital", legend=false, color=:blue, lw=2)
+plotn = plot(ns_true, label="ns", title="Labor Distribution", xlabel="Age", ylabel="Labor", legend=false, color=:red, lw=2)
+plotw = plot(ws_true, label="ws", title="Income Distribution", xlabel="Age", ylabel="Wage", legend=false, color=:green, lw=2)
+plotc = plot(cs_true, label="cs", title="Consumption Distribution", xlabel="Age", ylabel="Consumption", legend=false, color=:purple, lw=2)
 
-# plot of ns
-plotn = plot(ns_true[1:40], label="ns")
-
-plot(plotk, plotn, layout=(2, 1), legend=false)
+fig = plot(plotk, plotn, plotw, plotc, layout=(2, 2), legend=false, size=(800, 600))
+savefig(fig, "AK60.png")
