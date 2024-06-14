@@ -36,6 +36,7 @@ The consumption-leisure FOC is
 $$\frac{u_l(c^s_t, l^s_t)}{u_c(c^s_t, l^s_t)} = \gamma \frac{c^s_t + \psi}{l^s_t} = (1-\tau_t) w_t.$$
 
 Euler equation:
+
 $$\frac{1}{\beta} = \frac{u_c(c^{s+1}_{t+1}, l^{s+1}_{t+1})}{u_c(c^s_t, l^s_t)}(1+r_{t+1}) =\frac{(c^{s+1}_{t+1} + \psi)^{-\eta} (l^{s+1}_{t+1})^{\gamma(1-\eta)}}{(c^s_t + \psi)^{-\eta} (l^s_t)^{\gamma(1-\eta)}} (1+r_{t+1}).$$
 
 To derive the FOCs, we can solve by forming a Lagrangian equation or Bellman's Recursive equation.
