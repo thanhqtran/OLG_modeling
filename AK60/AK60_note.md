@@ -48,7 +48,9 @@ To derive the FOCs, we can solve by forming a Lagrangian equation or Bellman's R
 
 Cobb-Douglas technology
 
-$$Y_t = N_t^{1-\alpha} K_t^\alpha.$$
+
+$$Y_t = N_t^{1-\alpha} K_t^{\alpha}.$$
+
 
 Under a perfectly competitive market, the factor prices are
 $$w_t = (1-\alpha) K_t^\alpha N_t^{1-\alpha},$$
