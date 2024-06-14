@@ -36,7 +36,7 @@ function update_w(k, n)
     return (1 - alpha) * k^alpha * n^(-alpha)
 end
 
-function update_kbar(n)
+function update_kbar(n, r)
     return n * (alpha / (r + delta))^(1 / (1 - alpha))
 end
 
@@ -161,12 +161,12 @@ ns_true = zeros(61)
 
 # Initial guess for nbar
 nbar = 0.2
-kbar = update_kbar(nbar)
+kbar = update_kbar(nbar, r)
 w = update_w(kbar, nbar)
 
 # the loop algorithm
 while outer_i <= outer_max_iter && abs(outer_err) > outer_tol
-    kbar = update_kbar(nbar)
+    kbar = update_kbar(nbar, r)
     w = update_w(kbar, nbar)
 
     # solve the decision rules steady state age-profile
