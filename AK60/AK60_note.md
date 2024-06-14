@@ -5,11 +5,9 @@
 No population growth. The representative household's life span is 60, such that
 
 $$T + TR = 40 + 20 = 60$$
+
 where $T$ is the working length and $TR$ is the retirement length. Labor supply $n^s_t$ follows
-$$
-l^s_t = 1 - n^s_t \text{ for } t \in \{1, 2, \dots, 40\} \\
-l^s_t = 1 \text{ for } t \in \{41, 42, \dots, 60\}
-$$
+$$l^s_t = 1 - n^s_t \text{ for } t \in \{1, 2, \dots, 40\} \\ l^s_t = 1 \text{ for } t \in \{41, 42, \dots, 60\}$$
 where $l^s_t$ is leisure. After T years, retirement is mandatory. The agent's maximization problem is
 $$
 \sum^{T+TR}_{s=1} \beta^{s-1} u(c^s_{s+t-1}, l^s_{t+s-1})
