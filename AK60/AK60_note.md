@@ -3,9 +3,8 @@
 ## Households
 
 No population growth. The representative household's life span is 60, such that
-$$
-T + TR = 40 + 20 = 60
-$$
+
+$$T + TR = 40 + 20 = 60$$
 where $T$ is the working length and $TR$ is the retirement length. Labor supply $n^s_t$ follows
 $$
 l^s_t = 1 - n^s_t \text{ for } t \in \{1, 2, \dots, 40\} \\
