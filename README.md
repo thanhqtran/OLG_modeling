@@ -1,5 +1,5 @@
-# Some Large-Scale OLG
-Learning how to model Large-Scale OLG models (life cycle) in Julia. Some papers:
+# Large-Scale OLG Modeling
+I am learning how to model some Large-Scale OLG models (life cycle) in Julia. 
 
 ## must-read
 - [Auerbach & Kotlikoff (1987)](https://kotlikoff.net/wp-content/uploads/2019/03/Dynamic-Fiscal-Policy_1.pdf) ✔️
@@ -16,15 +16,16 @@ Learning how to model Large-Scale OLG models (life cycle) in Julia. Some papers:
 - [Huggett, Ventura & Yaron (2006)](https://doi.org/10.1016/j.jmoneco.2005.10.013)
 - [Braun and Joines (2014)](https://www.sciencedirect.com/science/article/pii/S0165188915000780)
 
-**Books**
+## Books
 - [Heer & Maussner (2009), Dynamic General Equilibrium Modeling Computational Methods and Applications](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/dsge-book/).
 - [Heer (2019), Public Economics: The Macroeconomic Perspective](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/pubec-book/)
 
-More: 
+## Other repo 
 - [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.com/robertdkirkby/LifeCycleOLGReadingList)
 - [https://www.robertdkirkby.com/life-cycle-and-olg-models/](https://www.robertdkirkby.com/life-cycle-and-olg-models/)
+- [https://github.com/BHeer42/LargeScaleOLGmodel](https://github.com/BHeer42/LargeScaleOLGmodel)
 
-# Running Julia Script
+## Running Julia Scripts
 - [Cheat Sheet](https://cheatsheet.juliadocs.org/)
 - After testing the functionality of the code in `.ipynb`, the entire code must be wrapped inside a `main()` function. Then, the script can be called and run in the terminal.
   ```julia
@@ -43,9 +44,9 @@ More:
   julia script.jl
   ```
 
-# Running Dynare
+## Running Dynare
 
-## in Julia
+**in Julia**
 (*) does not work all the time
 Documentation [https://juliapackages.com/p/dynare](https://juliapackages.com/p/dynare)
 - Installation
@@ -76,7 +77,7 @@ DD = load("<path to modfile>/<modefilename>/output/<modefilename>.jld2")``
 ```
 The IRF graphs are saved in `<path to modfile>/<modfilenane>/graphs`.
 
-## in Matlab
+**in Matlab**
 Quick Start: [here](https://www.dynare.org/resources/quick_start/)
 ```matlab
 addpath /Applications/Dynare/x.y/matlab
@@ -88,8 +89,8 @@ to edit
 edit example1.mod
 ```
 
-# Snippets
-- Nonlinear Solver Example
+## Snippets
+### Nonlinear Solver Example
 
   ```julia
   # Pkg.add("NLsolve")
@@ -112,8 +113,9 @@ edit example1.mod
   y_solution = result.zero[2]
   ```
     When applying this solver, the correct guess is very important. With backward iteration, remember to take the previously solved known value as the guess. For example, in Auerbach-Kotlikoff, the guess to solve `k[39]` should take the initial guess of `k`,`n` in `k[40]`, `k[41]`, and `n[40]`.
-- Loop
-  - while `loop`
+
+### Loops
+  - `while` `loop`
   ```julia
   max_iter = 10
   i = 1
@@ -128,13 +130,13 @@ edit example1.mod
     end
   end
   ```
-  - for `loop` forward
+  - `for` `loop` forward
   ```julia
   for s in 1:1:60
     k[s] = solve(k[s-1)
   end
   ```
-  - for `loop` backward
+  - `for` `loop` backward
   ```julia
   for s in 60:-1:1
     k[s] = solve(k[s+1])
