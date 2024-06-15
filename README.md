@@ -18,6 +18,9 @@ I am learning how to model some Large-Scale OLG models (life cycle) in Julia.
 
 ## Books
 - [Heer & Maussner (2009), Dynamic General Equilibrium Modeling Computational Methods and Applications](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/dsge-book/).
+
+with: [Python implementation](https://assets.uni-augsburg.de/media/filer_public/06/fe/06fea00a-5adf-475b-855a-d6b5ca67ebef/script_dge_python_intro.html)
+
 - [Heer (2019), Public Economics: The Macroeconomic Perspective](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/pubec-book/)
 
 ## Other repo 
