@@ -47,8 +47,11 @@ I am learning how to model some Large-Scale OLG models (life cycle) in Julia.
 ## Running Dynare
 
 **in Julia**
+
 (*) does not work all the time
+
 Documentation [https://juliapackages.com/p/dynare](https://juliapackages.com/p/dynare)
+
 - Installation
 ```julia
 using Pkg
@@ -65,10 +68,12 @@ import LinearAlgebra, OpenBLAS32_jll
 LinearAlgebra.BLAS.lbt_forward(OpenBLAS32_jll.libopenblas_path)
 ```
 - Invoke `.mod'` file
+
 ```julia
 context = @dynare "path/model.mod";
 ```
 The results are stored in the `context` structure.
+
 - View results
 The context structure is saved in the directory `<path to modfile>/<modfilenane>/output/<modfilename>.jld2`. It can be loaded with
 ```julia
@@ -78,7 +83,9 @@ DD = load("<path to modfile>/<modefilename>/output/<modefilename>.jld2")``
 The IRF graphs are saved in `<path to modfile>/<modfilenane>/graphs`.
 
 **in Matlab**
+
 Quick Start: [here](https://www.dynare.org/resources/quick_start/)
+
 ```matlab
 addpath /Applications/Dynare/x.y/matlab
 cd '/Users/USERNAME/work'
