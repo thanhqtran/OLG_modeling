@@ -95,7 +95,7 @@ Y_t = N_t^{1-\alpha} K_t^\alpha = \sum^{T+TR}_{s=1} \frac{c^s_t}{T+TR} + K_{t+1}
 
 ## Calibration
 
-Parameters: $\eta = 2, \beta = 0.99, \alpha = 0.3, \delta = 0.1, \gamma=2, \psi=0,001$​
+Parameters: $\eta = 2, \beta = 0.98, \alpha = 0.36, \delta = 0.1, \gamma=2, \psi=0,001$​
 
 Replacement ratio:
 
@@ -104,6 +104,8 @@ Replacement ratio:
 ```
 
 with $\bar{n}$ is the average labor supply. This function is used to calculate $\tau$.
+
+Target ss: $\bar{n} = 0.2, r = 0.045, b = 0.0979$
 
 ## Steady State Computation
 
