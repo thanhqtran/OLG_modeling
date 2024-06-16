@@ -213,7 +213,7 @@ end
 # consumption
 function cal_c(s, n, w, k1)
     if s <= 40
-        return (1 - tau) * w * (1 - n) / gamma - psi
+        return (1 - tau) * w * (1-n) / gamma - psi
     elseif s <= 60
         return w - k1
     else
@@ -230,15 +230,26 @@ end
 ws_true = zeros(61)
 cs_true = zeros(61)
 us_true = zeros(61)
+age_true = zeros(61)
 
 for s in 1:60
+    age_true[s] = s + 20
     ws_true[s] = cal_income(s, ks_true[s], ns_true[s])
     cs_true[s] = cal_c(s, ns_true[s], ws_true[s], ks_true[s+1])
     us_true[s] = cal_welfare(s, cs_true[s], ns_true[s])
 end
 
+ws_true[61] = 0
+cs_true[61] = 0
+us_true[61] = 0
+age_true[61] = 81
+
+# =======================================
+# == Print the steady states ============
+# =======================================
+
 println("Final nbar: ", nbar)
-println("Final K: ", K)
+println("Final K: ", kbar)
 println("Final N: ", N)
 println("Final Ny: ", Ny)
 
@@ -248,10 +259,12 @@ println("Final Ny: ", Ny)
 # show 4 plots at the same time
 
 # plot of ks
-plotk = plot(ks_true, label="ks", title="Capital Distribution", xlabel="Age", ylabel="Capital", legend=false, color=:blue, lw=2)
-plotn = plot(ns_true, label="ns", title="Labor Distribution", xlabel="Age", ylabel="Labor", legend=false, color=:red, lw=2)
-plotw = plot(ws_true, label="ws", title="Income Distribution", xlabel="Age", ylabel="Wage", legend=false, color=:green, lw=2)
-plotc = plot(cs_true, label="cs", title="Consumption Distribution", xlabel="Age", ylabel="Consumption", legend=false, color=:purple, lw=2)
+
+plotk = plot(age_true, ks_true, label="ks", title="Capital Distribution", xlabel="Age", ylabel="Capital", legend=false, color=:blue, lw=2, dpi=300)
+plotn = plot(age_true, ns_true, label="ns", title="Labor Distribution", xlabel="Age", ylabel="Labor", legend=false, color=:red, lw=2, dpi=300)
+plotw = plot(age_true, ws_true, label="ws", title="Income Distribution", xlabel="Age", ylabel="Wage", legend=false, color=:green, lw=2, dpi=300)
+plotc = plot(age_true, cs_true, label="cs", title="Consumption Distribution", xlabel="Age", ylabel="Consumption", legend=false, color=:purple, lw=2, dpi=300)
 
 fig = plot(plotk, plotn, plotw, plotc, layout=(2, 2), legend=false, size=(800, 600))
+
 savefig(fig, "AK60.png")
