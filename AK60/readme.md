@@ -11,4 +11,4 @@ Each period, an agent makes two decisions: how much to save and how much to supp
 
 Output:
 
-![](fig_AK60_out.png)
+![](fig_AK60_res.png)
