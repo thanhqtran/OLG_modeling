@@ -24,7 +24,6 @@ eta = 2
 repl = 0.3
 T = 40
 TR = 20
-b = 0.0979
 tau = repl / (2 + repl)
 psi = 0.001
 r = 0.045
@@ -163,6 +162,7 @@ ns_true = zeros(61)
 nbar = 0.2
 kbar = update_kbar(nbar, r)
 w = update_w(kbar, nbar)
+b = repl*(1-tau)*w*nbar*3/2
 
 # the loop algorithm
 while outer_i <= outer_max_iter && abs(outer_err) > outer_tol
