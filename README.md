@@ -23,10 +23,11 @@ with: [Python implementation](https://assets.uni-augsburg.de/media/filer_public/
 
 - [Heer (2019), Public Economics: The Macroeconomic Perspective](https://www.uni-augsburg.de/en/fakultaet/wiwi/prof/vwl/heer/pubec-book/)
 
-## Other repo 
+## Other repo to study
 - [https://github.com/robertdkirkby/LifeCycleOLGReadingList](https://github.com/robertdkirkby/LifeCycleOLGReadingList)
 - [https://www.robertdkirkby.com/life-cycle-and-olg-models/](https://www.robertdkirkby.com/life-cycle-and-olg-models/)
 - [https://github.com/BHeer42/LargeScaleOLGmodel](https://github.com/BHeer42/LargeScaleOLGmodel)
+- [https://yanranecon.github.io/codes/](https://yanranecon.github.io/codes/)
 
 ## Running Julia Scripts
 - [Cheat Sheet](https://cheatsheet.juliadocs.org/)
