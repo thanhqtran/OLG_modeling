@@ -3,6 +3,7 @@
 // In the last 20, they retire and receive pensions benefit b
 // There is no initial wealth: k1 = 0
 // Retirees do not work: n41 = n42 = ... = n60 = 0
+// Government decides social security tax, and distribute pension based on a given replacement ratio
 
 var k2 k3 k4 k5 k6 k7 k8 k9 k10 k11 k12 k13 k14 k15 k16 k17 k18 k19 k20 k21
     k22 k23 k24 k25 k26 k27 k28 k29 k30 k31 k32 k33 k34 k35 k36 k37 k38 k39 
@@ -15,10 +16,10 @@ var k2 k3 k4 k5 k6 k7 k8 k9 k10 k11 k12 k13 k14 k15 k16 k17 k18 k19 k20 k21
     c21 c22 c23 c24 c25 c26 c27 c28 c29 c30 c31 c32 c33 c34 c35 c36 c37 c38 
     c39 c40 c41 c42 c43 c44 c45 c46 c47 c48 c49 c50 c51 c52 c53 c54 c55 c56
     c57 c58 c59 c60
-    w r C N K;
+    w r C N K b;
 
 // specify parameters
-parameters beta eta gamma alpha delta repl b tau;
+parameters beta eta gamma alpha delta repl tau;
 // repl: replacement rate = b/((1-tau)*w*lbar
 
 // parameter values
@@ -28,7 +29,6 @@ gamma = 2.0;
 alpha = 0.36;
 delta = 0.1;
 repl = 0.30;
-b = 0.0979;
 tau = repl/(2+repl);
 
 // Model declaration
@@ -36,6 +36,7 @@ model;
 // prices
 r = alpha*K^(alpha-1) * N^(1-alpha) - delta;	// interest rate
 w = (1-alpha)*K^alpha * N^(-alpha);				// wage
+b = repl*(1-tau)*w*N*3/2;                       // pension
 // constraint
 c1 + k2 = (1-tau)*w*n1;							// constraint at age 1	(working)
 c2 + k3 = (1-tau)*w*n2 + (1+r)*k2(-1);			// constraint at age 2	(working)
@@ -370,6 +371,7 @@ K = 0.937;
 N = 0.236;
 r = 0.045;
 w = 1.05;
+b = 0;
 
 end;
 
