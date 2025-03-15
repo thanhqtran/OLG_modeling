@@ -1,5 +1,5 @@
 # Large-Scale OLG Modeling
-I am learning how to model some Large-Scale OLG models (life cycle) in Julia. 
+I am learning how to model some Large-Scale OLG models (life cycle) in Julia and Dynare.
 
 ## must-read
 - [Auerbach & Kotlikoff (1987)](https://kotlikoff.net/wp-content/uploads/2019/03/Dynamic-Fiscal-Policy_1.pdf) ✔️
